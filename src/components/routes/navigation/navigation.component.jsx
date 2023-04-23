@@ -9,6 +9,7 @@ const Navigation = ()=>{
           <Link className="logo-container" to='/'>
             <Crownlogo className="logo"/>
           </Link>
+          <h1>Freash Threads</h1>
           <div className="nav-links-container">
             <Link className="nav-link" to='/shop'>
               Shop
