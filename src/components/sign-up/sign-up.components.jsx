@@ -1,9 +1,12 @@
 import { useState } from "react"
 import FormInput from "../form-input/form-input.components"
+import Button from "../button/button.components"
 import { 
     createUserWithEmailandPasswordFromUser,
      createUserDocFromAuth 
     } from "../../utils/firebase/firebase.utils"
+
+import "./sign-up.styles.scss"    
 const defaultFormField = {
     displayName: "",
     Email: "",
@@ -15,7 +18,7 @@ const defaultFormField = {
 
 const SignUp = () => {
     const [formFields, setFormFields] = useState(defaultFormField)
-    console.log(formFields)
+    //console.log(formFields)
     const { displayName, Email, Password, confirmPassword } = formFields
 
 
@@ -54,8 +57,10 @@ const SignUp = () => {
     }
 
     return (
-        <div>
-            <h1>Sign up with ur Email and password</h1>
+        <div className="sign-up-container">
+
+            <h2>Don't have an account?</h2> 
+            <span>Sign up with ur Email and password</span>
             <form onSubmit={handleSubmit}>
                 <FormInput type="text"
                     label="Display Name"
@@ -87,7 +92,7 @@ const SignUp = () => {
                     name="confirmPassword"
                     value={confirmPassword} />
 
-                <button type="submit">Submit</button>
+                <Button type="submit">SIGN UP</Button>
             </form>
         </div>
     )
