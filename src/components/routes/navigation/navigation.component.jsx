@@ -7,9 +7,9 @@ const Navigation = ()=>{
       <Fragment>
         <div className="navigation">
           <Link className="logo-container" to='/'>
-            <Crownlogo className="logo"/>
+             <Crownlogo className="logo"/> 
+            FreshThreads
           </Link>
-          <h1>Freash Threads</h1>
           <div className="nav-links-container">
             <Link className="nav-link" to='/shop'>
               Shop
