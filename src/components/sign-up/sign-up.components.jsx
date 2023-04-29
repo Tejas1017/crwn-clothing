@@ -14,8 +14,6 @@ const defaultFormField = {
     confirmPassword: ""
 
 }
-
-
 const SignUp = () => {
     const [formFields, setFormFields] = useState(defaultFormField)
     //console.log(formFields)
@@ -44,7 +42,6 @@ const SignUp = () => {
                 alert('Email is already in use!')
             }
             else {
-
                 console.log("error", e)
             }
         }

@@ -8,17 +8,17 @@ const Navigation = ()=>{
         <div className="navigation">
           <Link className="logo-container" to='/'>
              <Crownlogo className="logo"/> 
-            FreshThreads
+          
           </Link>
           <div className="nav-links-container">
             <Link className="nav-link" to='/shop'>
               Shop
             </Link>
-            <Link className="nav-link" to='/sign-in'>
+            <Link className="nav-link" to='/auth'>
               Sign-in
             </Link>
           </div>
-          {/* <h1>Fresh Threads</h1> */}
+     
         </div>
       <Outlet/>
       </Fragment>
