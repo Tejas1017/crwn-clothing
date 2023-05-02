@@ -5,10 +5,12 @@ import {
   signInWithRedirect,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword} from "firebase/auth"
+  signInWithEmailAndPassword,
+  signOut
+} from "firebase/auth"
 import {getFirestore,doc,getDoc,setDoc} from "firebase/firestore"
 const firebaseConfig = {
-    apiKey: "AIzaSyD_2zEmCdpkV25uqIA06J4Zhi19XUDF0Xk",
+     apiKey: "AIzaSyD_2zEmCdpkV25uqIA06J4Zhi19XUDF0Xk",
     authDomain: "crwn-clothing-db-b94ed.firebaseapp.com",
     projectId: "crwn-clothing-db-b94ed",
     storageBucket: "crwn-clothing-db-b94ed.appspot.com",
@@ -36,8 +38,6 @@ const firebaseConfig = {
     if(!userSnapShot.exists()){
         const {displayName,email} = userAuth;
         const creatDate = new Date()
-
-
         try {
             await setDoc(userDocRef,{
                 displayName,
@@ -50,7 +50,6 @@ const firebaseConfig = {
         }
     }
   }
-
   export const createUserWithEmailandPasswordFromUser = async(email,password)=>{
     if(!email||!password) return;
 
@@ -62,3 +61,8 @@ const firebaseConfig = {
 
     return await signInWithEmailAndPassword(auth,email,password)
   } 
+
+  export const signOutUser =async()=>{
+   await signOut(auth)
+
+  }
